@@ -1,8 +1,12 @@
+import re
 from setuptools import setup
+
+with open("pdsk_util.py") as f:
+    version = re.search(r'^__version__\s*=\s*["\'](.+)["\']', f.read(), re.M).group(1)
 
 setup(
     name="pdsk-util",
-    version="0.0.1",
+    version=version,
     description="A beautiful disk usage viewer in python",
     author="Mixer",
     py_modules=["pdsk_util"],
